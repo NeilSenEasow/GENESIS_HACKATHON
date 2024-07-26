@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        .header {
+            background-color: #333;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        .dashboard {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 3;
+            margin-right: 20px;
+        }
+        .alerts {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+        .item-form {
+            margin-bottom: 20px;
+        }
+        .item-form input[type="text"],
+        .item-form input[type="number"],
+        .item-form input[type="date"],
+        .item-form select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .item-form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .item-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .item-list {
+            margin-top: 20px;
+        }
+        .item-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .item-list li {
+            background-color: lightblue ;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item-list .item-details {
+            flex: 1;
+        }
+        .item-list button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .item-list button:hover {
+            background-color: #c82333;
+        }
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer a {
+            color: #ff5733;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .item-list .item-details {
+            line-height: 30px;
+        }
+        .alerts {
+            line-height: 30px;
+        }
+        .alert-item {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .alert-item:nth-child(even) {
+            background-color: #d1ecf1;
+            border-left-color: #17a2b8;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 style="text-align: center; color: #ffffff;">Genesis</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <h1>Welcome, Donor!</h1>
+    </header>
+    <main>
+        <section class="dashboard">
+            <h2>Manage Your Donations</h2>
+            
+            <!-- Add Item Form -->
+            <div class="item-form">
+                <h3>Add New Item</h3>
+                <form action="#" method="post">
+                    <select name="item-category" required>
+                        <option value="" disabled selected>Category</option>
+                        <option value="vegetables & fruits">Fruits & Vegetables</option>
+                        <option value="Meat">Meat</option>
+                        <option value="Rice">Rice</option>
+                        <option value="other">Others</option>
+                    </select>
+                    <input type="text" name="item-name" placeholder="Item Name" required>
+                    <input type="text" name="item-type" placeholder="Item Type" required>
+                    <input type="number" name="item-quantity" placeholder="Quantity" required>
+                    <input type="date" name="item-expiration" placeholder="Expiration Date">
+                    <input type="submit" value="Add Item">
+                </form>
+            </div>
+
+            <!-- Item List (Static example) -->
+            <div class="item-list">
+                <h3>Items List</h3>
+                <ul>
+                    <li>
+                        <div class="item-details">
+                            Category: Fruits & Vegetables<br>
+                            Name: Example Item 1<br>
+                            Type: Perishable<br>
+                            Quantity: 10<br>
+                            Expiration Date: 2024-12-31
+                        </div>
+                        <button>Delete</button>
+                    </li>
+                    <li>
+                        <div class="item-details">
+                            Category: Meat<br>
+                            Name: Example Item 2<br>
+                            Type: Apparel<br>
+                            Quantity: 5<br>
+                            Expiration Date: N/A
+                        </div>
+                        <button>Delete</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <aside class="alerts">
+            <h2>Current Needs</h2>
+            <div class="alert-item">
+                <strong>Food Supplies</strong><br>
+                Needed: Canned goods, rice<br>
+                Quantity: 50 units<br>
+                Last updated: 2024-07-25
+            </div>
+            <div class="alert-item">
+                <strong>Clothing</strong><br>
+                Needed: Winter jackets, shoes<br>
+                Quantity: 30 items<br>
+                Last updated: 2024-07-25
+            </div>
+            <!-- Add more alerts as needed -->
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a>
+        </p>
+    </footer>
+</body>
+</html>

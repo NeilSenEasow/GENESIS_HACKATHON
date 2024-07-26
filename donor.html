@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: 85px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            width: 100%;
+            margin-top: 250px;
+        }
+        nav {
+            background-color: #444;
+            width: 100%;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            text-align: center;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+        .dashboard, .alerts {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .alerts {
+            flex: 1;
+        }
+        .dashboard {
+            flex: 3;
+        }
+        .item-form {
+            margin-bottom: 20px;
+        }
+        .item-form input[type="text"],
+        .item-form input[type="number"],
+        .item-form input[type="date"],
+        .item-form select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .item-form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .item-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .item-list {
+            margin-top: 20px;
+        }
+        .item-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .item-list li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #98c7f8;
+        }
+        .item-list .item-details {
+            flex: 1;
+        }
+        .item-list button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .item-list button:hover {
+            background-color: #c82333;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #ff5733;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .alert-item {
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .alert-item:nth-child(odd) {
+            background-color: #f8d7da;
+            border-left-color: #dc3545;
+        }
+        .alert-item:nth-child(even) {
+            background-color: #d4edda;
+            border-left-color: #28a745;
+        }
+        .alert-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Genesis</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>   
+    <main>
+        <section class="dashboard">
+            <h2>Manage Your Donations</h2>
+            <!-- Add Item Form -->
+            <div class="item-form">
+                <h3>Add New Item</h3>
+                <form action="#" method="post">
+                    <select name="item-category">
+                        <option value="" disabled selected>Category</option>
+                        <option value="vegetables & fruits">Fruits & Vegetables</option>
+                        <option value="Meat">Meat</option>
+                        <option value="Rice">Rice</option>
+                        <option value="other">Others</option>
+                    </select>
+                    <input type="text" name="item-name" placeholder="Item Name">
+                    <input type="text" name="item-type" placeholder="Item Type">
+                    <input type="number" name="item-quantity" placeholder="Quantity">
+                    <input type="date" name="item-expiration" placeholder="Expiration Date">
+                    <input type="submit" value="Add Item">
+                </form>
+            </div>
+
+            <!-- Item List (Static example) -->
+            <div class="item-list">
+                <h3>Items List</h3>
+                <ul>
+                    <li>
+                        <div class="item-details">
+                            Category: Fruits & Vegetables<br>
+                            Name: Example Item 1<br>
+                            Type: Perishable<br>
+                            Quantity: 10<br>
+                            Expiration Date: 2024-12-31
+                        </div>
+                        <button>Delete</button>
+                    </li>
+                    <li>
+                        <div class="item-details">
+                            Category: Meat<br>
+                            Name: Example Item 2<br>
+                            Type: Perishable<br>
+                            Quantity: 5<br>
+                            Expiration Date: N/A
+                        </div>
+                        <button>Delete</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <aside class="alerts">
+            <h2>Current Needs</h2>
+            <div class="alert-item">
+                <strong>Food Supplies</strong><br>
+                Needed: Canned goods, rice<br>
+                Quantity: 50 units<br>
+                Last updated: 2024-07-25
+            </div>
+            <div class="alert-item">
+                <strong>Clothing</strong><br>
+                Needed: Winter jackets, shoes<br>
+                Quantity: 30 items<br>
+                Last updated: 2024-07-25
+            </div>
+            <div class="alert-item">
+                <strong>Clothing</strong><br>
+                Needed: Winter jackets, shoes<br>
+                Quantity: 30 items<br>
+                Last updated: 2024-07-25
+            </div>
+            <div class="alert-item">
+                <strong>Clothing</strong><br>
+                Needed: Winter jackets, shoes<br>
+                Quantity: 30 items<br>
+                Last updated: 2024-07-25
+            </div>
+            <div class="alert-item">
+                <strong>Clothing</strong><br>
+                Needed: Winter jackets, shoes<br>
+                Quantity: 30 items<br>
+                Last updated: 2024-07-25
+            </div>
+            <!-- Add more alerts as needed -->
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a>
+        </p>
+    </footer>
+</body>
+</html>

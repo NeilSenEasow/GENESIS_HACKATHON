@@ -1,0 +1,115 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-form:nth-child(1) {
+    background-color: #333;
+    color: white;
+}
+
+.login-form:nth-child(2) {
+    background-color: #ff5733;
+    color: white;
+}
+
+.login-form h2 {
+    margin-top: 0;
+}
+
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-form input[type="email"], .login-form input[type="password"] {
+    background-color: #fff;
+    color: #333;
+}
+
+.login-form input[type="submit"] {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.login-form a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+/* style.css */
+
+.login-form input[type="submit"] {
+background-color: #4CAF50; /* Default background color */
+color: white; /* Text color */
+border: none;
+padding: 10px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.login-form input[type="submit"]:hover {
+background-color: #45a049; /* Darker background color on hover */
+transform: scale(1.05); /* Slightly enlarges the button */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+}
+
+.login-form input[type="submit"]:active {
+background-color: #388e3c; /* Even darker background color when pressed */
+transform: scale(1); /* Resets the scale */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduces the shadow */
+}
+
+.login-form p {
+margin: 10px 0 0;
+}
+
+.login-form a {
+color: #1e90ff; /* Default link color */
+text-decoration: none; /* Removes the default underline */
+font-weight: bold; /* Makes the text bold */
+transition: color 0.3s, text-decoration 0.3s; /* Smooth transition for color and underline */
+}
+
+.login-form a:hover {
+color: #00bfff; /* Change color on hover */
+text-decoration: underline; /* Adds an underline on hover */
+text-decoration-color: #00bfff;
+}
+
+.login-form a:active {
+color: #1e90ff; /* Color when the link is pressed */
+text-decoration: solid; /* Removes underline when pressed */
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Footer with Back Button</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            width: 100%;
+        }
+        main {
+            width: 100%;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            position: relative;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #ff5733;
+            margin-bottom: 20px;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+            border: 1px solid #333;
+        }
+        .tab:hover {
+            background-color: #575757;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #444;
+            color: white;
+        }
+        .active {
+            display: block;
+        }
+        .contact-me {
+            text-align: left;
+        }
+        .get-in-touch a {
+            color: #ff5733;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .get-in-touch a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Contact and Get in Touch</h1>
+    </header>
+    <main>
+        <div class="tabs">
+            <div class="tab" onclick="showTab('contact-me')">Contact Me</div>
+            <div class="tab" onclick="showTab('get-in-touch')">Get in Touch</div>
+        </div>
+        <div id="contact-me" class="tab-content contact-me">
+            <h3>Contact Me</h3>
+            <p>Email: contact@yourcompany.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+        <div id="get-in-touch" class="tab-content get-in-touch">
+            <h3>Get in Touch</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">Get in Touch</a>
+        </div>
+    </main>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabButtons = document.querySelectorAll('.tab');
+            tabButtons.forEach(button => button.classList.remove('active'));
+            
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to the selected tab button
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+
+        function goBack() {
+            window.location.href = 'donor.html';
+        }
+
+        // Default to showing the first tab
+        showTab('contact-me');
+    </script>
+</body>
+</html>
