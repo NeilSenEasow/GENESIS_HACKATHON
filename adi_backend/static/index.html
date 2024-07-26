@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Volunteer</h2>
+            <form action="/login/volunteer" method="POST">
+                <input type="email" name="email" placeholder="Your Email" required >
+                <input type="password" name="password" placeholder="Your Password" required >
+                <input type="submit" value="Login">
+                <p>New? <a href="/auth/signup/volunteer" style="color: aqua;">Sign up</a></p>
+            </form>
+        </div>
+        <div class="login-form">
+            <h2>Donor</h2>
+            <form action="/login/donor" method="POST">
+                <input type="email" name="email" placeholder="Your Email" required >
+                <input type="password" name="password" placeholder="Your Password" required >
+                <input type="submit" value="Login">
+                <p>New? <a href="/auth/signup/donor" style="color: aqua;">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
