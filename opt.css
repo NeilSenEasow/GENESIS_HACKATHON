@@ -48,6 +48,14 @@
             padding: 20px;
         }
 
+        .container a{
+            text-decoration: none;
+        }
+
+        .container h3:hover{
+            color: rgba(46, 77, 253, 0.867);
+        }
+
         .product {
             background-color: #fff;
             border-radius: 10px;
