@@ -1,58 +1,69 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
 
-/* Header Styling */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-}
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
 
-/* Button Container Styling */
-.button-container {
-    margin-top: 20px;
-}
+        .login-form {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-/* Button Styling */
-.button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
+        .login-form:nth-child(1) {
+            background-color: #333;
+            color: white;
+        }
 
-/* Button Hover Effect */
-.button:hover {
-    background-color: #0056b3;
-}
+        .login-form:nth-child(2) {
+            background-color: #ff5733;
+            color: white;
+        }
 
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: auto;
-}
+        .login-form h2 {
+            margin-top: 0;
+        }
+
+        .login-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .login-form input[type="email"], .login-form input[type="password"] {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .login-form input[type="submit"] {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        .login-form a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
