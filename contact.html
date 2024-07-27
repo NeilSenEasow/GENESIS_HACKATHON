@@ -3,143 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Footer with Back Button</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contact Us</title>
     <style>
-        html {
-            width: 100%;
-        }
-        main {
-            width: 100%;
-        }
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
         }
-        header {
-            position: relative;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
             text-align: center;
-            width: 100%;
         }
-        .back-button {
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
+        .contact-info, .address {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
             border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            text-align: center;
-            font-size: 14px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .back-button:hover {
-            background-color: #0056b3;
+        .contact-info h2, .address h2 {
+            margin-top: 0;
         }
-        .tabs {
+        .contact-info p, .address p {
+            margin: 10px 0;
+        }
+        nav {
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            border-bottom: 2px solid #ff5733;
-            margin-bottom: 20px;
         }
-        .tab {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            cursor: pointer;
-            background-color: #444;
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
             color: white;
-            border: 1px solid #333;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
         }
-        .tab:hover {
+
+        nav ul li a:hover {
             background-color: #575757;
         }
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background-color: #444;
-            color: white;
-        }
-        .active {
-            display: block;
-        }
-        .contact-me {
-            text-align: left;
-        }
-        .get-in-touch a {
-            color: #ff5733;
-            text-decoration: none;
-            display: block;
-            margin: 5px 0;
-        }
-        .get-in-touch a:hover {
-            text-decoration: underline;
-        }
         footer {
+            width: 100%;
             background-color: #333;
             color: white;
-            padding: 20px;
-            width: 100%;
-            box-sizing: border-box;
+            text-align: center;
+            padding: 20px 0;
             position: relative;
+            bottom: 0;
+        }
+
+        footer a {
+            color: #ff5733;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header>
-        <button class="back-button" onclick="goBack()">Back</button>
-        <h1>Contact and Get in Touch</h1>
-    </header>
-    <main>
-        <div class="tabs">
-            <div class="tab" onclick="showTab('contact-me')">Contact Me</div>
-            <div class="tab" onclick="showTab('get-in-touch')">Get in Touch</div>
+    <nav>
+        <h1 style="text-align: center;color: #ffffff;">Genesis</h1>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Contact Us</h1>
+        
+        <div class="contact-info">
+            <h2>Contact Details</h2>
+            <p><strong>Phone:</strong> (123) 456-7890</p>
+            <p><strong>Email:</strong> info@example.com</p>
+            <p><strong>Working Hours:</strong> Mon - Fri, 9 AM - 5 PM</p>
         </div>
-        <div id="contact-me" class="tab-content contact-me">
-            <h3>Contact Me</h3>
-            <p>Email: contact@yourcompany.com</p>
-            <p>Phone: (123) 456-7890</p>
+
+        <div class="address">
+            <h2>Our Address</h2>
+            <p>1234 Example Street</p>
+            <p>City, State, ZIP Code</p>
+            <p>Country</p>
         </div>
-        <div id="get-in-touch" class="tab-content get-in-touch">
-            <h3>Get in Touch</h3>
-            <a href="#">Contact Us</a>
-            <a href="#">Get in Touch</a>
-        </div>
-    </main>
+    </div>
     <footer>
-        <!-- Footer content -->
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a>
+        </p>
     </footer>
-
-    <script>
-        function showTab(tabId) {
-            // Hide all tab contents
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            // Remove active class from all tabs
-            const tabButtons = document.querySelectorAll('.tab');
-            tabButtons.forEach(button => button.classList.remove('active'));
-            
-            // Show the selected tab content
-            document.getElementById(tabId).classList.add('active');
-            
-            // Add active class to the selected tab button
-            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
-        }
-
-        function goBack() {
-            window.location.href = 'donor.html';
-        }
-
-        // Default to showing the first tab
-        showTab('contact-me');
-    </script>
 </body>
 </html>

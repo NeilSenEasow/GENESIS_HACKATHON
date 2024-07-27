@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility and Documentation Form</title>
+    <link rel="stylesheet" href="list_style.css">
+</head>
+<body>
+    <nav>
+        <h1 style="text-align: center;color: #ffffff;">Genesis</h1>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Eligibility and Documentation Form</h1>
+        
+        <form>
+            <section>
+                <h2>1. Define Eligibility Criteria</h2>
+                <label for="incomeLevel">Income Level:</label>
+                <input type="text" id="incomeLevel" name="incomeLevel"><br><br>
+
+                <label for="employmentStatus">Employment Status:</label>
+                <input type="text" id="employmentStatus" name="employmentStatus"><br><br>
+
+                <label for="householdSize">Household Size:</label>
+                <input type="text" id="householdSize" name="householdSize"><br><br>
+
+                <label for="govAssistance">Government Assistance:</label>
+                <input type="text" id="govAssistance" name="govAssistance"><br><br>
+
+                <label for="location">Enter Location:</label>
+                <input type="text" id="location" name="location"><br><br>
+
+                <label for="specialCircumstances">Special Circumstances:</label>
+                <input type="text" id="specialCircumstances" name="specialCircumstances"><br><br>
+            </section>
+
+            <section>
+                <h2>2. Documentation Requirements</h2>
+                <label for="proofOfIncome">Proof of Income:</label>
+                <input type="file" id="proofOfIncome" name="proofOfIncome"><br><br>
+
+                <label for="identification">Identification:</label>
+                <input type="file" id="identification" name="identification"><br><br>
+
+                <label for="proofOfResidence">Proof of Residence:</label>
+                <input type="file" id="proofOfResidence" name="proofOfResidence"><br><br>
+
+                <label for="employmentVerification">Employment Verification:</label>
+                <input type="file" id="employmentVerification" name="employmentVerification"><br><br>
+
+                <label for="govAssistanceDoc">Government Assistance Documentation:</label>
+                <input type="file" id="govAssistanceDoc" name="govAssistanceDoc"><br><br>
+            </section>
+
+            <section>
+                
+                <h3>Household Information</h3>
+                <label for="dependents">Number of Dependents:</label>
+                <input type="text" id="dependents" name="dependents"><br><br>
+
+                <h3>Government Assistance</h3>
+                <label>Receiving Assistance:</label><br>
+                <input type="radio" id="assistanceYes" name="receivingAssistance" value="yes">
+                <label for="assistanceYes">Yes</label><br>
+                <input type="radio" id="assistanceNo" name="receivingAssistance" value="no">
+                <label for="assistanceNo">No</label><br><br>
+
+                <label for="assistanceType">Type of Assistance:</label>
+                <input type="text" id="assistanceType" name="assistanceType"><br><br>
+
+                <h3>Special Circumstances</h3>
+                <label for="specialDetails">Details (if any):</label>
+                <input type="text" id="specialDetails" name="specialDetails"><br><br>
+            </section>
+
+            <section>
+                <h3>Documentation Submission</h3>
+                <label>Proof of Income:</label><br>
+                <input type="checkbox" id="incomePayStubs" name="proofOfIncome" value="payStubs">
+                <label for="incomePayStubs">Pay Stubs</label><br>
+                <input type="checkbox" id="incomeTaxReturns" name="proofOfIncome" value="taxReturns">
+                <label for="incomeTaxReturns">Tax Returns</label><br>
+                <input type="checkbox" id="incomeBankStatements" name="proofOfIncome" value="bankStatements">
+                <label for="incomeBankStatements">Bank Statements</label><br><br>
+
+                <label>Identification:</label><br>
+                <input type="checkbox" id="idDriversLicense" name="identification" value="driversLicense">
+                <label for="idDriversLicense">Driver’s License</label><br>
+                <input type="checkbox" id="idPassport" name="identification" value="passport">
+                <label for="idPassport">Passport</label><br>
+                <input type="checkbox" id="idOther" name="identification" value="other">
+                <label for="idOther">Other:</label><br><br>
+
+                <label>Proof of Residence:</label><br>
+                <input type="checkbox" id="residenceUtilityBills" name="proofOfResidence" value="utilityBills">
+                <label for="residenceUtilityBills">Utility Bills</label><br>
+                <input type="checkbox" id="residenceLeaseAgreements" name="proofOfResidence" value="leaseAgreements">
+                <label for="residenceLeaseAgreements">Lease Agreements</label><br>
+                <input type="checkbox" id="residenceOther" name="proofOfResidence" value="other">
+                <label for="residenceOther">Other:</label><br><br>
+
+                <label>Employment Verification:</label><br>
+                <input type="checkbox" id="employmentVerificationYes" name="employmentVerificationDoc" value="yes">
+                <label for="employmentVerificationYes">Yes</label><br>
+                <input type="checkbox" id="employmentVerificationNo" name="employmentVerificationDoc" value="no">
+                <label for="employmentVerificationNo">No</label><br><br>
+
+            </section>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a>
+        </p>
+    </footer>
+</body>
+</html>
